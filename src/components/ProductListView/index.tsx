@@ -1,4 +1,6 @@
-import Container from "./style"
+import AddToCartButton from "components/AddToCartButton"
+import formatMoney from "helpers/formatMoney"
+import Container, { ProductCard } from "./style"
 
 interface ProductListViewProps {
     productList: Product[]
@@ -11,11 +13,12 @@ function ProductListView({productList}: ProductListViewProps){
             <ul>
                 {productList.map(product => {
                     return (
-                        <li key={product.id}>
-                        <img src={product.image} alt="" />
-                        <p>{product.name}</p>
-                        <span>{product.price}</span>
-                    </li>    
+                        <ProductCard key={product.id}>
+                            <img src={product.image} alt="" />
+                            <p>{product.title}</p>
+                            <span>{formatMoney(product.price)}</span>
+                            <AddToCartButton/>
+                        </ProductCard>    
                     )
                 })}
             </ul>
