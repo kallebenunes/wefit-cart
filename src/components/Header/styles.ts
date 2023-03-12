@@ -6,13 +6,15 @@ const Container = styled.header`
     align-items: center;
     padding: 0 .5rem;
     height: 68px;
+    max-width: 960px;
+    margin: 0 auto;
 
     @media(min-width: 768px){
-        padding: 0 48px;
+      
     }
 
     @media(min-width: 1024px){
-        padding: 0 240px;
+
         height: 74px;
     }
 

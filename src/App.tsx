@@ -1,3 +1,4 @@
+import { Cart } from "pages/home/Cart"
 import { ThemeProvider } from "styled-components"
 import Header from "./components/Header"
 import Home from "./pages/home"
@@ -11,7 +12,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle/>
       <Header/>
-      <Home/>
+      <Cart/>
     </ThemeProvider>
   )
 }

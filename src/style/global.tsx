@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
         max-width: 1440px;
         margin: 0 auto;
     }
+
+
 `
 
 export default GlobalStyle
