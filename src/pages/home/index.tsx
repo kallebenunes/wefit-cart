@@ -1,6 +1,8 @@
+import LoadSpinner from "components/LoadSpinner"
+
 function Home(){
     return (
-        <h1>Home</h1>
+        <LoadSpinner/>
     ) 
 }
 
