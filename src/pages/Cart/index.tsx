@@ -1,12 +1,11 @@
 import CartListContainer from "components/CartListContainer"
-import CartList from "components/CartListContainer"
 import EmptyCart from "components/EmptyCart"
+import useCart from "hooks/useCart"
 import { useState } from "react"
-import Container from "./style"
 
 export function Cart(){
 
-    const [isEmptyCart, setIsEmptyCart] = useState(false)
+    const { cartTotalQuantity } = useCart()
 
-    return  isEmptyCart ? <EmptyCart/> : <CartListContainer/>
+    return  cartTotalQuantity === 0 ? <EmptyCart/> : <CartListContainer/>
 }

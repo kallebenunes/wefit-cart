@@ -3,8 +3,12 @@ import Container, { ProductInfo, SubTotal } from "./style";
 import trashIcon from 'assets/icons/trash.svg'
 import QuantitySelector from "components/QuantitySelector";
 import CartBottom from "components/CartBottom";
+import useCart from "hooks/useCart";
 
 function CartListDesktop(){
+
+    const {cartProductList} = useCart()
+
     return (
         <Container>
             <table>
@@ -17,28 +21,30 @@ function CartListDesktop(){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <ProductInfo>
-                                <img src="https://wefit-react-web-test.s3.amazonaws.com/spider-man.png" alt="" />
-                                <div>
-                                    <p>Homem Aranaha</p>
-                                    <span>{formatMoney(9.99)}</span>
-                                </div>
-                            </ProductInfo>
-                        </td>
-                        <td>
-                            <QuantitySelector/>
-                        </td>
-                        <td>
-                            <SubTotal>
-                                <p>{formatMoney(9.99)}</p>
-                                <button>
-                                    <img src={trashIcon} alt="" />
-                                </button>
-                            </SubTotal>
-                        </td>
-                    </tr>
+                   {cartProductList.map(product => (
+                     <tr>
+                     <td>
+                         <ProductInfo>
+                             <img src={product.image} alt="" />
+                             <div>
+                                 <p>{product.title}</p>
+                                 <span>{formatMoney(product.price)}</span>
+                             </div>
+                         </ProductInfo>
+                     </td>
+                     <td>
+                         <QuantitySelector/>
+                     </td>
+                     <td>
+                         <SubTotal>
+                             <p>{formatMoney(product.price * product.quantity)}</p>
+                             <button>
+                                 <img src={trashIcon} alt="" />
+                             </button>
+                         </SubTotal>
+                     </td>
+                 </tr>
+                   ))}
                 </tbody>
             </table>
             <CartBottom/>

@@ -37,7 +37,7 @@ background: ${props => props.theme.colors.white};
         }
 
         td {
-
+            padding-bottom: 1rem;
             div {
                 width: 100%;
                 display: flex;

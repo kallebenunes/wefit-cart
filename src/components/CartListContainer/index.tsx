@@ -1,6 +1,4 @@
-import formatMoney from "helpers/formatMoney"
-import Container from "./style"
-import trashIcon from 'assets/icons/trash.svg'
+
 import { useEffect, useState } from "react"
 import CartListDesktop from "components/CartListDesktop"
 import CartListMobile from "components/CartListMobile"

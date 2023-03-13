@@ -3,29 +3,35 @@ import Container, { SummaryBottom, SummaryTop } from "./style"
 import trashIcon from 'assets/icons/trash.svg'
 import QuantitySelector from "components/QuantitySelector"
 import CartBottom from "components/CartBottom"
+import useCart from "hooks/useCart"
 
 function CartListMobile (){
+
+    const {cartProductList} = useCart()
+
     return (
         <Container>
             <ul>
-                <li>
-                    <img src="https://wefit-react-web-test.s3.amazonaws.com/spider-man.png" alt="" />
-                    <section>
-                        <SummaryTop>
-                            <p>Homem-aranha</p>
-                            <span>{formatMoney(29.99)}</span>
-                            <button>
-                                <img src={trashIcon} alt="" />
-                            </button>
-                        </SummaryTop>
-                        <SummaryBottom>
-                            <QuantitySelector/>
-                            <span>
-                                {formatMoney(29.99)}
-                            </span>
-                        </SummaryBottom>
-                    </section>
-                </li>
+                {cartProductList.map(product => (
+                    <li>
+                        <img src={product.image} alt="" />
+                        <section>
+                            <SummaryTop>
+                                <p>{product.title}</p>
+                                <span>{formatMoney(product.price)}</span>
+                                <button>
+                                    <img src={trashIcon} alt="" />
+                                </button>
+                            </SummaryTop>
+                            <SummaryBottom>
+                                <QuantitySelector/>
+                                <span>
+                                    {formatMoney(product.price * product.quantity)}
+                                </span>
+                            </SummaryBottom>
+                        </section>
+                    </li>
+                ))}
             </ul>
             <CartBottom/>
         </Container>

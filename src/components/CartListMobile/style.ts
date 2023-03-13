@@ -17,6 +17,7 @@ const Container = styled.section`
         padding: 1rem;
 
         li {
+            margin-bottom: 1rem;
             section {
                 width: 100%;
                 display: flex;
