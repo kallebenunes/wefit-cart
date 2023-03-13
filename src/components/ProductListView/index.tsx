@@ -17,7 +17,7 @@ function ProductListView({productList}: ProductListViewProps){
                             <img src={product.image} alt="" />
                             <p>{product.title}</p>
                             <span>{formatMoney(product.price)}</span>
-                            <AddToCartButton/>
+                            <AddToCartButton product={product}/>
                         </ProductCard>    
                     )
                 })}

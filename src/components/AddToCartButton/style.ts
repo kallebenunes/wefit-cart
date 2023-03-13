@@ -1,8 +1,12 @@
 import styled  from 'styled-components';
 
-const Container = styled.button`
+interface Props {
+    isSelected: boolean
+}
 
-    background: ${props => props.theme.colors.blue};
+const Container = styled.button<Props>`
+
+    background: ${props => props.isSelected ? props.theme.colors.green : props.theme.colors.blue};
     color: ${props => props.theme.colors.white};
     display: flex;
     width: 100%;

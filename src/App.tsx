@@ -6,20 +6,23 @@ import Home from "./pages/home"
 import GlobalStyle from "./style/global"
 import theme from "./style/themes/default"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CartProvider from "contexts/cartProvider"
 
 function App() {
 
   return (
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle/>
-        <Header/>
-        <Routes>
-          <Route path="/" Component={Home} />
-          <Route path="/cart" Component={Cart}></Route>
-          <Route path="/orderPlaced" Component={OrderPlaced} />
-        </Routes>
-      </ThemeProvider>
+      <CartProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Header />
+          <Routes>
+            <Route path="/" Component={Home} />
+            <Route path="/cart" Component={Cart}></Route>
+            <Route path="/orderPlaced" Component={OrderPlaced} />
+          </Routes>
+        </ThemeProvider>
+      </CartProvider>
     </BrowserRouter>
   )
 }
