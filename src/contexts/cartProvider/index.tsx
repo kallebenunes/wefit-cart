@@ -1,9 +1,11 @@
-import { createContext, ReactNode, useState } from "react"
+import { createContext, ReactNode, useEffect, useState } from "react"
 
 export interface CartContext {
     cartProductList: CartProduct[],
     addProduct: (product: Product) => CartProduct,
-    removeProduct: (productId: number) => void
+    removeProduct: (productId: number) => void,
+    cartTotalValue: number,
+    cartTotalQuantity: number
 }
 
 export const CartContext = createContext({} as CartContext)
@@ -19,8 +21,8 @@ interface CartProviderProps {
 function CartProvider ({children}: CartProviderProps){
     
     const [cartProductList, setCartProductList] = useState<CartProduct[]>([] as CartProduct[])
-
-    console.log(cartProductList)
+    const [cartTotalValue, setCartTotalValue] = useState(0)
+    const [cartTotalQuantity, setCartTotalQuantity] = useState(0)
 
     function addProduct(product: Product){
         let cartProduct: CartProduct = {
@@ -40,10 +42,22 @@ function CartProvider ({children}: CartProviderProps){
 
     }
 
+    useEffect(() => {
+        setCartTotalValue(state => {
+            return cartProductList.reduce((acc, product) => acc + (product.price * product.quantity) , 0)
+        })
+
+        setCartTotalQuantity(state => {
+            return cartProductList.reduce((acc, product) => acc  + product.quantity , 0)
+        })
+    }, [cartProductList])
+
     const cartContextVaue: CartContext = {
         cartProductList,
         addProduct,
-        removeProduct
+        removeProduct,
+        cartTotalValue,
+        cartTotalQuantity
     }
 
     return (
@@ -54,3 +68,4 @@ function CartProvider ({children}: CartProviderProps){
 }
 
 export default CartProvider
+

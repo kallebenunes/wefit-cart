@@ -18,7 +18,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" Component={Home} />
-            <Route path="/cart" Component={Cart}></Route>
+            <Route path="/cart" Component={Cart}/>
             <Route path="/orderPlaced" Component={OrderPlaced} />
           </Routes>
         </ThemeProvider>
