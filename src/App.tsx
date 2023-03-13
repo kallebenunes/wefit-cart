@@ -1,4 +1,4 @@
-import { Cart } from "pages/home/Cart"
+import { Cart } from "pages/Cart"
 import { ThemeProvider } from "styled-components"
 import Header from "./components/Header"
 import Home from "./pages/home"
