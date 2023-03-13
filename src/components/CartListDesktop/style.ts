@@ -6,6 +6,7 @@ background: ${props => props.theme.colors.white};
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
+    margin-bottom: 1rem;
 
     table {
         padding: 24px;

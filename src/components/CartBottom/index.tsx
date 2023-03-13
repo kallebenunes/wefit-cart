@@ -5,12 +5,13 @@ import Container from "./style"
 
 function CartBottom (){
 
-    const {cartTotalValue} = useCart()
+    const {cartTotalValue, resetCart} = useCart()
 
     const navigate = useNavigate()
 
     function handleOrderPlaced(){
         navigate('/orderPlaced')
+        resetCart()
     }
     
     return (

@@ -40,7 +40,7 @@ const Container = styled.section`
         color: ${props => props.theme.colors.white};
         margin-top: 1rem;
         text-transform: uppercase;
-        font-weight: 700;
+        cursor: pointer;
 
     }
 

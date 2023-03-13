@@ -17,9 +17,14 @@ const Container = styled.button<Props>`
     text-transform: uppercase;
     padding: .5rem;;
     gap: .4rem;
+    cursor: pointer;
 
-    span  {
+    span p {
         font-weight: 400;
+    }
+
+    p {
+        line-height: 1;
     }
     
 `

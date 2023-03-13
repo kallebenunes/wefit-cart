@@ -1,5 +1,6 @@
 import Container from "./style";
 import orderPlacedImg from 'assets/finished-order.svg'
+import { NavLink } from "react-router-dom";
 
 function OrderPlaced () {
     return (
@@ -7,7 +8,7 @@ function OrderPlaced () {
         <div>
             <p>Compra realizada com sucesso!</p>
             <img src={orderPlacedImg} alt="" />
-            <button>Voltar</button>
+            <NavLink to={'/'}>Voltar</NavLink>
         </div>
     </Container>
     )

@@ -26,14 +26,17 @@ const Container = styled.section`
             line-height: 27px;
         }
 
-        button {
+        a {
             color: ${props => props.theme.colors.white};            
             background: ${props => props.theme.colors.blue};
             border: none;
             border-radius: 4px;
             width: 180px;
             height: 40px;
-
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 `

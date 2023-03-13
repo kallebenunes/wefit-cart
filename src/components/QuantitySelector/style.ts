@@ -24,6 +24,7 @@ const Container = styled.div`
         height: 18px;        
         background: transparent;
         border: 0;
+        cursor: pointer;
         
     }
 `

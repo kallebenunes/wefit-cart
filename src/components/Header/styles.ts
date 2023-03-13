@@ -9,12 +9,8 @@ const Container = styled.header`
     max-width: 960px;
     margin: 0 auto;
 
-    @media(min-width: 768px){
-      
-    }
 
     @media(min-width: 1024px){
-
         height: 74px;
     }
 
@@ -25,6 +21,7 @@ export const CartSummary = styled.section`
         align-items: center;
         gap: .4rem;
         color: ${props => props.theme.colors.white};
+        cursor: pointer;
 
         div {
             flex-direction: column;

@@ -11,10 +11,10 @@ function Home(){
 
     async function loadProducts(){
         const {data} = await axios.get('http://localhost:3000/products')  
-        setTimeout(() => {
+      
             setProductList(data)
             setIsLoading(false)
-        }, 1000)
+      
     }
 
     useEffect(() => {

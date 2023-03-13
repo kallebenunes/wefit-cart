@@ -7,7 +7,7 @@ import useCart from "hooks/useCart"
 
 function CartListMobile (){
 
-    const {cartProductList} = useCart()
+    const { cartProductList, removeProduct } = useCart()
 
     return (
         <Container>
@@ -19,7 +19,7 @@ function CartListMobile (){
                             <SummaryTop>
                                 <p>{product.title}</p>
                                 <span>{formatMoney(product.price)}</span>
-                                <button>
+                                <button onClick={() => {removeProduct(product.id)}}>
                                     <img src={trashIcon} alt="" />
                                 </button>
                             </SummaryTop>
