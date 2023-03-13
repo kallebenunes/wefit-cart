@@ -1,4 +1,5 @@
 import { Cart } from "pages/Cart"
+import OrderPlaced from "pages/OrderPlaced"
 import { ThemeProvider } from "styled-components"
 import Header from "./components/Header"
 import Home from "./pages/home"
@@ -12,7 +13,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle/>
       <Header/>
-      <Cart/>
+      <OrderPlaced/>
     </ThemeProvider>
   )
 }
