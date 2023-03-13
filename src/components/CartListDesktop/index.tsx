@@ -7,7 +7,11 @@ import useCart from "hooks/useCart";
 
 function CartListDesktop(){
 
-    const {cartProductList} = useCart()
+    const {cartProductList, removeProduct} = useCart()
+
+    function handleRemoveProduct(productId: number){
+        removeProduct(productId)
+    }
 
     return (
         <Container>
@@ -33,12 +37,12 @@ function CartListDesktop(){
                          </ProductInfo>
                      </td>
                      <td>
-                         <QuantitySelector/>
+                         <QuantitySelector product={product}/>
                      </td>
                      <td>
                          <SubTotal>
                              <p>{formatMoney(product.price * product.quantity)}</p>
-                             <button>
+                             <button onClick={() => {handleRemoveProduct(product.id)}}>
                                  <img src={trashIcon} alt="" />
                              </button>
                          </SubTotal>

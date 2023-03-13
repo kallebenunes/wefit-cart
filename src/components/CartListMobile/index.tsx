@@ -24,7 +24,7 @@ function CartListMobile (){
                                 </button>
                             </SummaryTop>
                             <SummaryBottom>
-                                <QuantitySelector/>
+                                <QuantitySelector product={product}/>
                                 <span>
                                     {formatMoney(product.price * product.quantity)}
                                 </span>

@@ -39,7 +39,8 @@ function CartProvider ({children}: CartProviderProps){
     }
 
     function removeProduct(productId: number){
-
+        const newProductList = cartProductList.filter(product => !(product.id === productId))
+        setCartProductList(newProductList)
     }
 
     useEffect(() => {
