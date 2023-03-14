@@ -10,9 +10,9 @@ function Home(){
     const [productList, setProductList] = useState<Product[]>([] as Product[])
 
     async function loadProducts(){
-        const {data} = await axios.get('http://localhost:3000/products')  
+        const {data} = await axios.get('https://raw.githubusercontent.com/kallebenunes/data/main/products')  
       
-            setProductList(data)
+            setProductList(data.products)
             setIsLoading(false)
       
     }

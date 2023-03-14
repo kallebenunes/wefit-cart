@@ -16,7 +16,7 @@ function CartBottom (){
     
     return (
         <Container>
-            <button onClick={handleOrderPlaced}>Finalizer pedido</button>
+            <button onClick={handleOrderPlaced}>Finalizar pedido</button>
             <div>
                 <p>Total</p>
                 <span>{formatMoney(cartTotalValue)}</span>
